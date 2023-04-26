@@ -1,0 +1,451 @@
+{
+	"info": {
+		"_postman_id": "b76fadcf-37ab-4881-87a1-e972119c620b",
+		"name": "ToDoApp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "signUP",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"test\",\r\n    \"email\":\"test@gmail.com\",\r\n    \"password\":\"123456\",\r\n    \"confirmtionPassword\":\"123456\",\r\n    \"age\":\"23\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/user/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logIn",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"amr@gmail.com\",\r\n    \"password\":\"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/user/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update Name And Email",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZjM2ODJiMWExMDM1ZmJmNzA2OTFkOCIsImlhdCI6MTY3NzI2NzgxNSwiZXhwIjoxNjc3MjcxNDE1fQ.WY_ZI9oY1Ty6OdydazVjMDbKWbflTSxbVRh7SKrlxbg",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"amr1\",\r\n    \"email\":\"amr1@gmail.com\"\r\n}   ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/user/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete user",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwiaWQiOiI2M2Y0YTZmMGQwMzFmZTFiNmUyMzIzYWIiLCJpYXQiOjE2NzY5Nzc5MTYsImV4cCI6MTY3Njk4MTUxNn0.wRMWzEZLHk3_O8EUaV1iO_DuUTG0NjDfZ0yiliys-l0",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/user/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logOut",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFtckBnbWFpbC5jb20iLCJpZCI6IjYzZjM2ODJiMWExMDM1ZmJmNzA2OTFkOCIsImlhdCI6MTY3NzE3MzcxOSwiZXhwIjoxNjc3MTc3MzE5fQ.3m7qTNHPxyarvuMWFSWjOpPrNQCCmYLlUVAprdBCR4M",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/user/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "task",
+			"item": [
+				{
+					"name": "add task",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFtckBnbWFpbC5jb20iLCJpZCI6IjYzZjM2ODJiMWExMDM1ZmJmNzA2OTFkOCIsImlhdCI6MTY4MjE2OTQ5NCwiZXhwIjoxNjgyMTczMDk0fQ.OVnUn-ZfFP1gMicLjJVjRfXGzg-w-mZFNVunAzHHMTo",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"task 35 amr\",\r\n    \"content\":\"third task ali\",\r\n    \"addBy\":\"63f3682b1a1035fbf70691d8\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/task/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"task",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all task add by user",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFsaTFAZ21haWwuY29tIiwiaWQiOiI2M2Y0OTU4M2M2NzM2YTIwM2JiNTgyNDIiLCJpYXQiOjE2NzY5OTExMzMsImV4cCI6MTY3Njk5NDczM30.T7XTOkljWr_dog0uuYTokTlCH2NM9pL39eqf5zom6V0",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"addBy\":\"63f49583c6736a203bb58242\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/task/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"task",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "task status update",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFsaTFAZ21haWwuY29tIiwiaWQiOiI2M2Y0OTU4M2M2NzM2YTIwM2JiNTgyNDIiLCJpYXQiOjE2NzcwNTE1NjcsImV4cCI6MTY3NzA1NTE2N30.WjUniHMup182h6nFT5KGKfppMlFFeTF4dc08wMR01EQ",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"63f4ba713d51a9bc0f5e134b\",\r\n    \"status\":\"done\",\r\n    \"addBy\":\"63f49583c6736a203bb58242\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/task/status",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"task",
+								"status"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "task title update",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFsaTFAZ21haWwuY29tIiwiaWQiOiI2M2Y0OTU4M2M2NzM2YTIwM2JiNTgyNDIiLCJpYXQiOjE2NzcwNTE1NjcsImV4cCI6MTY3NzA1NTE2N30.WjUniHMup182h6nFT5KGKfppMlFFeTF4dc08wMR01EQ",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"63f4ba713d51a9bc0f5e134b\",\r\n    \"title\":\"task 2 ali\",\r\n    \"addBy\":\"63f49583c6736a203bb58242\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/task/updatename",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"task",
+								"updatename"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search for task",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFsaTFAZ21haWwuY29tIiwiaWQiOiI2M2Y0OTU4M2M2NzM2YTIwM2JiNTgyNDIiLCJpYXQiOjE2NzcwNTM4NzMsImV4cCI6MTY3NzA1NzQ3M30.4pSYKN0Runqfs7au2NOIjbx3Zn2bDszHAwd-Dk1oKTU",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"addBy\":\"63f49583c6736a203bb58242\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/task/searchtask/task%201%20ali1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"task",
+								"searchtask",
+								"task%201%20ali1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete task",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFsaTFAZ21haWwuY29tIiwiaWQiOiI2M2Y0OTU4M2M2NzM2YTIwM2JiNTgyNDIiLCJpYXQiOjE2NzcwNTM4NzMsImV4cCI6MTY3NzA1NzQ3M30.4pSYKN0Runqfs7au2NOIjbx3Zn2bDszHAwd-Dk1oKTU",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"addBy\":\"63f49583c6736a203bb58242\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/task/delete/63f5cecd49e6df9c6f887072",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"task",
+								"delete",
+								"63f5cecd49e6df9c6f887072"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete all taks by one user",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFsaTFAZ21haWwuY29tIiwiaWQiOiI2M2Y0OTU4M2M2NzM2YTIwM2JiNTgyNDIiLCJpYXQiOjE2NzcwNTYyOTksImV4cCI6MTY3NzA1OTg5OX0.PwfCx2BbVzT2JUUbIFenpWeTGW8BCw0fVdlVd0WHFBk",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/task/deleteall/63f49583c6736a203bb58242",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"task",
+								"deleteall",
+								"63f49583c6736a203bb58242"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update all task to don",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFtckBnbWFpbC5jb20iLCJpZCI6IjYzZjM2ODJiMWExMDM1ZmJmNzA2OTFkOCIsImlhdCI6MTY3NzA1NzE2MywiZXhwIjoxNjc3MDYwNzYzfQ.XanguyqjwZxPJpIFbtmPm28FxcPsTNZ8H_bQH4z0jX4",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"addBy\":\"63f49583c6736a203bb58242\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/task/alldone/63f3682b1a1035fbf70691d8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"task",
+								"alldone",
+								"63f3682b1a1035fbf70691d8"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
